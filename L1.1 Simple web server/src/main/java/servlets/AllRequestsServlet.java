@@ -20,7 +20,8 @@ import java.util.Map;
 public class AllRequestsServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request,
-                      HttpServletResponse response) throws ServletException, IOException {
+                      HttpServletResponse response) throws ServletException, IOException
+    {
 
         Map<String, Object> pageVariables = createPageVariablesMap(request);
         pageVariables.put("message", "");
@@ -33,7 +34,8 @@ public class AllRequestsServlet extends HttpServlet {
     }
 
     public void doPost(HttpServletRequest request,
-                       HttpServletResponse response) throws ServletException, IOException {
+                       HttpServletResponse response) throws ServletException, IOException
+    {
         Map<String, Object> pageVariables = createPageVariablesMap(request);
 
         String message = request.getParameter("message");

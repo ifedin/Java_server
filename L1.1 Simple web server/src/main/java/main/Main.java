@@ -23,6 +23,7 @@ public class Main {
         server.setHandler(context); // устанавливаем Hadler для сервера,
 
         server.start();
+        System.out.println("Server started"); // для задания необходимо вывести сообщение, что сервер стартанул
         server.join();
     }
 }
