@@ -20,22 +20,20 @@ import java.util.Map;
 public class AllRequestsServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request,
-                      HttpServletResponse response) throws ServletException, IOException
-    {
+                      HttpServletResponse response) throws ServletException, IOException {
 
         Map<String, Object> pageVariables = createPageVariablesMap(request);
         pageVariables.put("message", "");
 
-        response.getWriter().println(PageGenerator.instance().getPage("page.html", pageVariables));
+        response.getWriter().println(request.getParameter("key"));
 
-        response.setContentType("text/html;charset=utf-8");
-        response.setStatus(HttpServletResponse.SC_OK);
+        //response.setContentType("text/html;charset=utf-8");
+        //response.setStatus(HttpServletResponse.SC_OK);
 
     }
 
     public void doPost(HttpServletRequest request,
-                       HttpServletResponse response) throws ServletException, IOException
-    {
+                       HttpServletResponse response) throws ServletException, IOException {
         Map<String, Object> pageVariables = createPageVariablesMap(request);
 
         String message = request.getParameter("message");
